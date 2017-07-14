@@ -13,7 +13,7 @@ test('personal identity numbers in an erroneous format', assert => {
 test('personal identity numbers with a correct checksum but incorrect date', assert => {
   assert.notOk(isValid('000000-0000'));
   assert.notOk(isValid('198413320428'));
-  assert.notOk(isValid('7602324564'));
+  assert.notOk(isValid('7602314564'));
   assert.notOk(isValid('19520132-6724'));
   assert.notOk(isValid('941301-4235'));
   assert.end();
