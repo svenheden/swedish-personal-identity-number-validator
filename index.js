@@ -1,13 +1,7 @@
 const pattern = /^\d{6}(\d{2})?[+-]?\d{4}$/;
 
-const isValidSwedishPersonalIdentityNumber = input => {
-  if (!pattern.test(input)) {
-    return false;
-  }
-
-  const cleaned = input.replace(/[+-]/, '').slice(-10);
-
-  const sum = cleaned
+const hasCorrectChecksum = input => {
+  const sum = input
     .split('')
     .reverse()
     .map(Number)
@@ -15,20 +9,23 @@ const isValidSwedishPersonalIdentityNumber = input => {
     .map((x) => x > 9 ? x - 9 : x)
     .reduce((x, y) => x + y);
 
-  const checksumIsCorrect = sum % 10 === 0;
+  return sum % 10 === 0;
+}
 
-  if (!checksumIsCorrect) {
+const hasValidDate = input => {
+  const [_, year, month, day] = /^(\d{2})(\d{2})(\d{2})/.exec(input);
+
+  return !!Date.parse(`${month} ${day} ${year}`);
+}
+
+const isValidSwedishPersonalIdentityNumber = input => {
+  if (!pattern.test(input)) {
     return false;
   }
 
-  const [_, year, month, day] = /^(\d{2})(\d{2})(\d{2})/.exec(cleaned);
-  const dateIsValid = Date.parse(`${month} ${day} ${year}`);
+  const cleaned = input.replace(/[+-]/, '').slice(-10);
 
-  if (!dateIsValid) {
-    return false;
-  }
-
-  return true;
+  return hasCorrectChecksum(cleaned) && hasValidDate(cleaned);
 };
 
 module.exports = isValidSwedishPersonalIdentityNumber;
