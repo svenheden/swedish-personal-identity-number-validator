@@ -16,7 +16,7 @@ $ npm install --save swedish-personal-identity-number-validator
 ## Usage
 
 ```js
-const isValid = require('swedish-personal-identity-number-validator');
+import { isValid } from 'swedish-personal-identity-number-validator';
 
 isValid('foobar') // => false
 ```
