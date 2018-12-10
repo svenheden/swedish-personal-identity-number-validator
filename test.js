@@ -74,3 +74,15 @@ test('personal identity numbers in the 10 digit format without the hyphen/plus s
   assert.notOk(isValid('0908157892'));
   assert.end();
 });
+
+test('coordination numbers', assert => {
+  assert.ok(isValid('701063-2391'));
+  assert.ok(isValid('640883-3231'));
+  assert.ok(isValid('7010632391'));
+  assert.ok(isValid('6408833231'));
+  assert.ok(isValid('19701063-2391'));
+  assert.ok(isValid('19640883-3231'));
+  assert.ok(isValid('197010632391'));
+  assert.ok(isValid('196408833231'));
+  assert.end();
+});

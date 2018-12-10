@@ -17,7 +17,12 @@ const hasValidDate = (input: string) => {
 
   const year = Number(yearStr);
   const month = Number(monthStr) - 1;
-  const day = Number(dayStr);
+  let day = Number(dayStr);
+
+  if (day > 60) { // coordination numbers ("samordningsnummer")
+    day -= 60;
+  }
+
   const date = new Date(year, month, day);
 
   const yearIsValid = String(date.getFullYear()).substr(-2) === yearStr;
