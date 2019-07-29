@@ -24,9 +24,9 @@ isValid('foobar') // => false
 
 ## License
 
-MIT © [Jonathan Persson](https://github.com/jonathanp)
+MIT © [Jonathan Svenheden](https://github.com/svenheden)
 
 [npm-url]: https://npmjs.org/package/swedish-personal-identity-number-validator
 [npm-image]: https://badge.fury.io/js/swedish-personal-identity-number-validator.svg
-[travis-image]: https://travis-ci.org/jonathanp/swedish-personal-identity-number-validator.svg
-[travis-url]: https://travis-ci.org/jonathanp/swedish-personal-identity-number-validator
+[travis-image]: https://travis-ci.org/svenheden/swedish-personal-identity-number-validator.svg
+[travis-url]: https://travis-ci.org/svenheden/swedish-personal-identity-number-validator
