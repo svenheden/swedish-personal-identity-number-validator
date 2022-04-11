@@ -16,7 +16,7 @@ $ npm install --save swedish-personal-identity-number-validator
 ```js
 import { isValid } from "swedish-personal-identity-number-validator";
 
-isValid("foobar"); // => false
+isValid("19900704-2386"); // => true
 ```
 
 ## License
