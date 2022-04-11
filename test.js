@@ -1,3 +1,8 @@
+/**
+ * Official test data from Skatteverket sourced from here:
+ * https://www.skatteverket.se/omoss/apierochoppnadata/hittaapierochoppnadata/kunskapochinspiration/alltdubehovervetaomtestpersonnummer.4.5b35a6251761e6914202df9.html
+ */
+
 const test = require('tape');
 const { isValid } = require('./dist');
 
@@ -20,11 +25,11 @@ test('personal identity numbers with a correct checksum but incorrect date', ass
 });
 
 test('valid personal identity numbers in the 12 digit format', assert => {
-  assert.ok(isValid('19990827-6034'));
-  assert.ok(isValid('19590526-3868'));
-  assert.ok(isValid('19221002-2618'));
-  assert.ok(isValid('19110815-3527'));
-  assert.ok(isValid('19240112-1039'));
+  assert.ok(isValid('20131112-2384'));
+  assert.ok(isValid('19900704-2386'));
+  assert.ok(isValid('19950113-2386'));
+  assert.ok(isValid('19080807-9800'));
+  assert.ok(isValid('18991223-9812'));
   assert.end();
 });
 
@@ -38,9 +43,9 @@ test('invalid personal identity numbers in the 12 digit format', assert => {
 });
 
 test('personal identity numbers in the 12 digit format without the hyphen/plus sign', assert => {
-  assert.ok(isValid('199301049608'));
-  assert.ok(isValid('197608181017'));
-  assert.ok(isValid('198109124530'));
+  assert.ok(isValid('201707302384'));
+  assert.ok(isValid('201411182387'));
+  assert.ok(isValid('195210092218'));
   assert.notOk(isValid('199601267042'));
   assert.notOk(isValid('197807015207'));
   assert.notOk(isValid('193312286704'));
@@ -48,11 +53,11 @@ test('personal identity numbers in the 12 digit format without the hyphen/plus s
 });
 
 test('valid personal identity numbers in the 10 digit format', assert => {
-  assert.ok(isValid('150928-2701'));
-  assert.ok(isValid('630108-6002'));
-  assert.ok(isValid('760401-1127'));
-  assert.ok(isValid('580331+7592'));
-  assert.ok(isValid('350304+2784'));
+  assert.ok(isValid('971129-2392'));
+  assert.ok(isValid('900804-2385'));
+  assert.ok(isValid('141031-2381'));
+  assert.ok(isValid('930302+9806'));
+  assert.ok(isValid('091224+9828'));
   assert.end();
 });
 
@@ -66,9 +71,9 @@ test('invalid personal identity numbers in the 10 digit format', assert => {
 });
 
 test('personal identity numbers in the 10 digit format without the hyphen/plus sign', assert => {
-  assert.ok(isValid('9301049608'));
-  assert.ok(isValid('7608181017'));
-  assert.ok(isValid('8109124530'));
+  assert.ok(isValid('1712192390'));
+  assert.ok(isValid('0205102387'));
+  assert.ok(isValid('5211231864'));
   assert.notOk(isValid('9601267042'));
   assert.notOk(isValid('7807013107'));
   assert.notOk(isValid('0908157892'));
@@ -76,13 +81,13 @@ test('personal identity numbers in the 10 digit format without the hyphen/plus s
 });
 
 test('coordination numbers', assert => {
-  assert.ok(isValid('701063-2391'));
-  assert.ok(isValid('640883-3231'));
-  assert.ok(isValid('7010632391'));
-  assert.ok(isValid('6408833231'));
-  assert.ok(isValid('19701063-2391'));
-  assert.ok(isValid('19640883-3231'));
-  assert.ok(isValid('197010632391'));
-  assert.ok(isValid('196408833231'));
+  assert.ok(isValid('900477-2381'));
+  assert.ok(isValid('110482-2398'));
+  assert.ok(isValid('7911882392'));
+  assert.ok(isValid('197203702399'));
+  assert.ok(isValid('19600780-2397'));
+  assert.ok(isValid('020372-2392'));
+  assert.ok(isValid('197505722392'));
+  assert.ok(isValid('196104902397'));
   assert.end();
 });

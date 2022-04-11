@@ -1,6 +1,6 @@
 {
   "name": "swedish-personal-identity-number-validator",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "title": "Swedish personal identity number validator",
   "description": "Validates Swedish personal identity numbers",
   "main": "dist/index.js",
